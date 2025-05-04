@@ -22,14 +22,19 @@ const CreateInvoice = FormSchema.omit({ id: true, date: true });
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function deleteInvoice(id: string) {
-  //throw new Error('Failed to Delete Invoice');
+  //production stop
+  throw new Error('Failed to Delete Invoice');
  
-  // Unreachable code block
+  // Unreachable code block commenting for 
   await sql`DELETE FROM invoices WHERE id = ${id}`;
   revalidatePath('/dashboard/invoices');
 }
 
 export async function updateInvoice(id: string, formData: FormData) {
+    //production stop
+    throw new Error('Failed to Delete Invoice');
+
+
   const { customerId, amount, status } = UpdateInvoice.parse({
     customerId: formData.get('customerId'),
     amount: formData.get('amount'),
@@ -54,6 +59,9 @@ export async function updateInvoice(id: string, formData: FormData) {
 }
 
 export async function createInvoice(formData: FormData) {
+    //production stop
+    throw new Error('Failed to Delete Invoice');
+
   const { customerId, amount, status } = CreateInvoice.parse({
     customerId: formData.get('customerId'),
     amount: formData.get('amount'),
