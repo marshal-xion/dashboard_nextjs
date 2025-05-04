@@ -29,3 +29,29 @@ className={clsx(
 
 
 This make the active link highlighted in blue in dashboard page
+
+
+
+
+partial prerendering - next js - not good for production
+
+to implement - 
+
+go to next.config.ts
+
+add line in nextConfig block
+
+  experimental: {
+    ppr: 'incremental'
+  }
+
+then go to layout page of dashboard where you want to implement and add 
+
+export const experimental_ppr = true;
+
+thats it.
+The great thing about Partial Prerendering is that you don't need to change your code to use it. As long as you're using Suspense to wrap the dynamic parts of your route, Next.js will know which parts of your route are static and which are dynamic.
+
+
+
+ Next.js APIs: useSearchParams, usePathname, and useRouter.
