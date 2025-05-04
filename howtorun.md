@@ -55,3 +55,7 @@ The great thing about Partial Prerendering is that you don't need to change your
 
 
  Next.js APIs: useSearchParams, usePathname, and useRouter.
+
+
+ React Server Actions allow you to run asynchronous code directly on the server. They eliminate the need to create API endpoints to mutate your data. Instead, you write asynchronous functions that execute on the server and can be invoked from your Client or Server Components.
+
